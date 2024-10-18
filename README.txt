@@ -1,3 +1,4 @@
+Git clone the ngx_http_poxy_connect_module and the nginx-sslkeylog to the directory for the patches.
 Use these commands to do be able to run nginx-1.27.0
 
 1. Build the patches
