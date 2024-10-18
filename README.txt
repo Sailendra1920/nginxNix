@@ -4,9 +4,9 @@ Use these commands to do be able to run nginx-1.27.0
 	nix-build -A keylog
 	nix-build -A proxy
 2. Build the nginx-1.27.0
-	nix-build -A deriveNginx
+	nix-build -A nginx
 3. Install the Derivation
-	nix-env -f . -iA deriveNginx
+	nix-env -f . -iA nginx
 4. To check if build was a success
 	nix-env -q
 5. Create directory
@@ -14,9 +14,10 @@ Use these commands to do be able to run nginx-1.27.0
 6. Inside ~/.config/nixpkgs/  create overlays.nix and add the following:
 	[
 	( self: super: {
-		nginx_1_27_0 = super.callPackage ~/Documents/nginxDev/deriveNginx.nix { };
+		nginx_1_27_0 = super.callPackage ~/path/to/deriveNginx.nix { };
 	})
 	]
-7. nix-shell -p nginx_1_27_0
+7. Enter the shell
+	nix-shell -p nginx_1_27_0
 
 
